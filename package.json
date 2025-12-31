@@ -32,7 +32,6 @@
     "test-coverage": "ng test --browsers ChromeHeadless --code-coverage --watch=false",
     "coveralls": "YOURPACKAGE_COVERAGE=1 cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
-  "peerDependencies": {},
   "devDependencies": {
     "@angular-devkit/build-angular": "^12.2.18",
     "@angular/cli": "^12.2.18",
@@ -44,7 +43,6 @@
     "@angular/platform-browser": "^12.2.17",
     "@angular/platform-browser-dynamic": "^12.2.17",
     "@angular/router": "^12.2.17",
-    "@linnenschmidt/build-ng-packagr": "^9.0.0",
     "@types/bluebird": "^3.5.29",
     "@types/core-js": "^2.5.2",
     "@types/jasmine": "~3.6.0",
