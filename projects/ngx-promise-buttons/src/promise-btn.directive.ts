@@ -1,12 +1,11 @@
-import {AfterContentInit, Directive, ElementRef, HostListener, Inject, Input, OnDestroy} from '@angular/core';
+import {AfterContentInit, Directive, ElementRef, HostListener, Inject, Input, OnDestroy, Optional} from '@angular/core';
 import {Observable, Subscription} from 'rxjs';
 import {DEFAULT_CFG} from './default-promise-btn-config';
 import {PromiseBtnConfig} from './promise-btn-config';
-import {userCfg} from './user-cfg';
+import {USER_CFG} from "./provider";
 
 @Directive({
     selector: '[promiseBtn]',
-    standalone: false
 })
 
 export class PromiseBtnDirective implements OnDestroy, AfterContentInit {
@@ -41,7 +40,7 @@ export class PromiseBtnDirective implements OnDestroy, AfterContentInit {
   private _fakePromiseResolve: (value: void) => void;
 
   constructor(el: ElementRef,
-              @Inject(userCfg) cfg: PromiseBtnConfig) {
+              @Optional() @Inject(USER_CFG) cfg?: PromiseBtnConfig) {
     // provide configuration
     this.cfg = Object.assign({}, DEFAULT_CFG, cfg);
 

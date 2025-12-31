@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Observable, Subscription} from 'rxjs';
-
+import {PromiseBtnDirective} from "../../../ngx-promise-buttons/src";
 const STANDARD_DELAY = 1000;
 const FAKE_FACT = {
   success() {
@@ -69,7 +69,9 @@ const FAKE_FACT = {
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
-    standalone: false
+  imports:[
+    PromiseBtnDirective
+  ]
 })
 export class AppComponent {
   successPromise: Promise<any>;
