@@ -1,10 +1,10 @@
 {
-  "name": "angular2-promise-buttons",
-  "version": "6.0.1",
+  "name": "ngx-promise-buttons",
+  "version": "1.0.0",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/johannesjo/angular2-promise-buttons.git"
+    "url": "git+ssh://git@github.com/meysamsahragard/ngx-promise-buttons.git"
   },
   "scripts": {
     "ng": "ng",
@@ -18,15 +18,15 @@
     "demo.copy-readme": "node scripts/copy-readme-to-demo.js",
     "demo.gh-pages": "gh-pages -d dist/demo",
     "lib": "run-s lib.build copy",
-    "lib.build": "ng build --configuration production angular2-promise-buttons",
+    "lib.build": "ng build --configuration production ngx-promise-buttons",
     "copy": "run-s copy.licence copy.readme",
-    "copy.licence": "copyfiles ./LICENSE ./dist/angular2-promise-buttons",
-    "copy.readme": "copyfiles ./README.md ./dist/angular2-promise-buttons",
-    "pub": "run-s lib && cd ./dist/angular2-promise-buttons/ && npm publish && cd .. && cd ..",
-    "patch": "npm version patch && cd ./projects/angular2-promise-buttons && npm version patch && cd .. && cd .. && git add . && git commit -am\"chore: update lib version\"",
+    "copy.licence": "copyfiles ./LICENSE ./dist/ngx-promise-buttons",
+    "copy.readme": "copyfiles ./README.md ./dist/ngx-promise-buttons",
+    "pub": "run-s lib && cd ./dist/ngx-promise-buttons/ && npm publish && cd .. && cd ..",
+    "patch": "npm version patch && cd ./projects/ngx-promise-buttons && npm version patch && cd .. && cd .. && git add . && git commit -am\"chore: update lib version\"",
     "patch-release_": "run-s lib demo patch pub",
     "patch-release": "npm run patch-release_",
-    "major": "npm version major && cd ./projects/angular2-promise-buttons && npm version major && cd .. && cd .. && git add . && git commit -am\"chore: update lib version\"",
+    "major": "npm version major && cd ./projects/ngx-promise-buttons && npm version major && cd .. && cd .. && git add . && git commit -am\"chore: update lib version\"",
     "major-release_": "run-s lib demo major pub",
     "major-release": "npm run major-release_",
     "test-coverage": "ng test --browsers ChromeHeadless --code-coverage --watch=false",

@@ -1,12 +1,12 @@
 {
-  "name": "angular2-promise-buttons",
-  "version": "6.0.0",
+  "name": "ngx-promise-buttons",
+  "version": "1.0.0",
   "description": "Chilled loading buttons for angular",
-  "author": "johannesjo <contact@super-productivity.com> (http://super-productivity.com)",
+  "author": "meysamsahragard <contact@super-productivity.com> (http://super-productivity.com)",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/johannesjo/angular2-promise-buttons.git"
+    "url": "git+ssh://git@github.com/meysamsahragard/ngx-promise-buttons.git"
   },
   "keywords": [
     "angular",

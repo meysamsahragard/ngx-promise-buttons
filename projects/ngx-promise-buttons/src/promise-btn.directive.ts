@@ -24,7 +24,6 @@ export class PromiseBtnDirective implements OnDestroy, AfterContentInit {
   promise: any;
 
   // this is added to fix the overriding of the disabled state by the loading indicator button.
-  // https://github.com/johannesjo/angular2-promise-buttons/issues/34
   @Input('disabled')
   set isDisabledFromTheOutsideSetter(v: boolean) {
     this.isDisabledFromTheOutside = v;

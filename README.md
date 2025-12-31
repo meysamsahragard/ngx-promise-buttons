@@ -1,13 +1,13 @@
 <p align="center"><img src="logo.png"></p>
           
 <p align="center">
-    <a href="https://badge.fury.io/js/angular2-promise-buttons">
+    <a href="https://badge.fury.io/js/ngx-promise-buttons">
         <img src="https://camo.githubusercontent.com/5e39de25cca817826da9e93cdce01f16bc499695/68747470733a2f2f62616467652e667572792e696f2f6a732f616e67756c6172322d70726f6d6973652d627574746f6e732e737667"
              alt="npm version"></a>
-    <a href="https://travis-ci.org/johannesjo/angular2-promise-buttons?branch=master">
+    <a href="https://travis-ci.org/meysamsahragard/ngx-promise-buttons?branch=master">
         <img src="https://camo.githubusercontent.com/849a28d2647af8a0fe2a8d47b860d638f5421948/68747470733a2f2f7472617669732d63692e6f72672f6a6f68616e6e65736a6f2f616e67756c6172322d70726f6d6973652d627574746f6e732e737667"
              alt="Build Status"></a>
-    <a href="https://coveralls.io/github/johannesjo/angular2-promise-buttons?branch=master">
+    <a href="https://coveralls.io/github/meysamsahragard/ngx-promise-buttons?branch=master">
         <img src="https://camo.githubusercontent.com/80cb53bf16882ebc70866dffd299edfa741b26e9/68747470733a2f2f636f766572616c6c732e696f2f7265706f732f6769746875622f6a6f68616e6e65736a6f2f616e67756c6172322d70726f6d6973652d627574746f6e732f62616467652e7376673f6272616e63683d6d6173746572"
              alt="Coverage Status"></a>
     <a href="https://lbesson.mit-license.org">
@@ -17,23 +17,23 @@
 </p>
 
 
-*angular2-promise-buttons* is a simple module that let's you add a loading indicator to a button of your choice.  Check out the [demo](http://johannesjo.github.io/angular2-promise-buttons/#demo)!
+*ngx-promise-buttons* is a simple module that let's you add a loading indicator to a button of your choice.  Check out the [demo](http://meysamsahragard.github.io/ngx-promise-buttons/#demo)!
 
-[Bug-reports or feature request](https://github.com/johannesjo/angular2-promise-buttons/issues) as well as any other kind of **feedback is highly welcome!**
+[Bug-reports or feature request](https://github.com/meysamsahragard/ngx-promise-buttons/issues) as well as any other kind of **feedback is highly welcome!**
 
 ## Getting started
 Install it via npm:
 ```
-npm install angular2-promise-buttons -S
+npm install ngx-promise-buttons -S
 ```
 
 And add it as a dependency to your main module
 ```typescript
-import {Angular2PromiseButtonModule} from 'angular2-promise-buttons';
+import {NgxPromiseButtonModule} from 'ngx-promise-buttons';
 
 @NgModule({
   imports: [
-    Angular2PromiseButtonModule.forRoot(),
+    NgxPromiseButtonModule.forRoot(),
   ],
 })
 export class MainAppModule {
@@ -70,11 +70,11 @@ There are selectors you can use to style. There is the `.is-loading` class on th
 ## Configuration
 Configuration is done via the forRoot method of the promise button module:
 ```typescript
-import {Angular2PromiseButtonModule} from 'angular2-promise-buttons';
+import {NgxPromiseButtonModule} from 'ngx-promise-buttons';
 
 @NgModule({
   imports: [
-    Angular2PromiseButtonModule
+    NgxPromiseButtonModule
       .forRoot({
         // your custom config goes here
         spinnerTpl: '<span class="btn-spinner"></span>',
@@ -124,4 +124,4 @@ Is now also possible.
    [promiseBtn]="isShowBoolean">Click!</button>
 ```
 ## Contributing
-Contribution guidelines: [CONTRIBUTING.md](https://github.com/johannesjo/angular2-promise-buttons/blob/master/CONTRIBUTING.md)
+Contribution guidelines: [CONTRIBUTING.md](https://github.com/meysamsahragard/ngx-promise-buttons/blob/master/CONTRIBUTING.md)
