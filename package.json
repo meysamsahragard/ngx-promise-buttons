@@ -33,16 +33,16 @@
     "coveralls": "YOURPACKAGE_COVERAGE=1 cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^15.2.11",
-    "@angular/cli": "^15.2.11",
-    "@angular/common": "^15.2.10",
-    "@angular/compiler": "^15.2.10",
-    "@angular/compiler-cli": "^15.2.10",
-    "@angular/core": "^15.2.10",
-    "@angular/forms": "^15.2.10",
-    "@angular/platform-browser": "^15.2.10",
-    "@angular/platform-browser-dynamic": "^15.2.10",
-    "@angular/router": "^15.2.10",
+    "@angular-devkit/build-angular": "^16.2.16",
+    "@angular/cli": "^16.2.16",
+    "@angular/common": "^16.2.12",
+    "@angular/compiler": "^16.2.12",
+    "@angular/compiler-cli": "^16.2.12",
+    "@angular/core": "^16.2.12",
+    "@angular/forms": "^16.2.12",
+    "@angular/platform-browser": "^16.2.12",
+    "@angular/platform-browser-dynamic": "^16.2.12",
+    "@angular/router": "^16.2.12",
     "@types/bluebird": "^3.5.29",
     "@types/core-js": "^2.5.2",
     "@types/jasmine": "~3.6.0",
@@ -71,7 +71,7 @@
     "karma-jasmine-html-reporter": "^1.5.0",
     "karma-phantomjs-launcher": "^1.0.4",
     "marked": "^2.0.0",
-    "ng-packagr": "^15.2.2",
+    "ng-packagr": "^16.2.3",
     "npm-run-all": "^4.1.5",
     "protractor": "~7.0.0",
     "reflect-metadata": "^0.1.13",
@@ -82,6 +82,6 @@
     "typescript": "~4.9.5",
     "wallaby-webpack": "3.9.15",
     "web-animations-js": "^2.3.2",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.13.3"
   }
 }
