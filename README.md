@@ -27,17 +27,13 @@ Install it via npm:
 npm install ngx-promise-buttons -S
 ```
 
-And add it as a dependency to your main module
+Add it to your app using bootstrapApplication:
 ```typescript
-import {NgxPromiseButtonModule} from 'ngx-promise-buttons';
-
-@NgModule({
-  imports: [
-    NgxPromiseButtonModule.forRoot(),
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideNgxPromiseButtons({ handleCurrentBtnOnly: true }),
   ],
-})
-export class MainAppModule {
-}
+});
 ```
 Using the buttons is easy. Just pass a promise to the directive:
 ```html
@@ -68,28 +64,14 @@ There are selectors you can use to style. There is the `.is-loading` class on th
 
 
 ## Configuration
-Configuration is done via the forRoot method of the promise button module:
+You can pass a config object to provideNgxPromiseButtons:
 ```typescript
-import {NgxPromiseButtonModule} from 'ngx-promise-buttons';
-
-@NgModule({
-  imports: [
-    NgxPromiseButtonModule
-      .forRoot({
-        // your custom config goes here
-        spinnerTpl: '<span class="btn-spinner"></span>',
-        // disable buttons when promise is pending
-        disableBtn: true,
-        // the class used to indicate a pending promise
-        btnLoadingClass: 'is-loading',
-        // only disable and show is-loading class for clicked button, 
-        // even when they share the same promise
-        handleCurrentBtnOnly: false,
-      }),
-  ],
-})
-export class MainAppModule {
-}
+provideNgxPromiseButtons({
+  spinnerTpl: '<span class="btn-spinner"></span>',
+  disableBtn: true,
+  btnLoadingClass: 'is-loading',
+  handleCurrentBtnOnly: false,
+});
 ```
 
 ## Using observables
