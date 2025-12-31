@@ -17,8 +17,9 @@ class MockElementRef extends ElementRef {
 }
 
 @Component({
-  selector: 'test-component',
-  template: ''
+    selector: 'test-component',
+    template: '',
+    standalone: false
 })
 class TestComponent {
   testPromise: any;

@@ -15,12 +15,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "../../dist/demo",
+            "outputPath": {
+              "base": "../../dist/demo"
+            },
             "index": "projects/angular2-promise-buttons-demo/src/index.html",
-            "main": "projects/angular2-promise-buttons-demo/src/main.ts",
-            "polyfills": "projects/angular2-promise-buttons-demo/src/polyfills.ts",
+            "polyfills": [
+              "projects/angular2-promise-buttons-demo/src/polyfills.ts"
+            ],
             "tsConfig": "projects/angular2-promise-buttons-demo/tsconfig.app.json",
             "assets": [
               "projects/angular2-promise-buttons-demo/src/favicon.ico",
@@ -30,12 +33,11 @@
               "projects/angular2-promise-buttons-demo/src/styles.scss"
             ],
             "scripts": [],
-            "vendorChunk": true,
             "extractLicenses": false,
-            "buildOptimizer": false,
             "sourceMap": true,
             "optimization": false,
-            "namedChunks": true
+            "namedChunks": true,
+            "browser": "projects/angular2-promise-buttons-demo/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -50,8 +52,6 @@
               "sourceMap": false,
               "namedChunks": false,
               "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",

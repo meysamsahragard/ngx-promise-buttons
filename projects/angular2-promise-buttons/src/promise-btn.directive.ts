@@ -5,7 +5,8 @@ import {PromiseBtnConfig} from './promise-btn-config';
 import {userCfg} from './user-cfg';
 
 @Directive({
-  selector: '[promiseBtn]'
+    selector: '[promiseBtn]',
+    standalone: false
 })
 
 export class PromiseBtnDirective implements OnDestroy, AfterContentInit {
