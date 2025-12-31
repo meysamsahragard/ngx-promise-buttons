@@ -150,6 +150,5 @@
         }
       }
     }
-  },
-  "defaultProject": "angular2-promise-buttons-demo"
+  }
 }
