@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ChangeDetectionStrategy} from '@angular/core';
 import {Observable, Subscription} from 'rxjs';
 import {PromiseBtnDirective} from "../../../ngx-promise-buttons/src";
 const STANDARD_DELAY = 1000;
@@ -69,6 +69,7 @@ const FAKE_FACT = {
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports:[
     PromiseBtnDirective
   ]

@@ -6,6 +6,7 @@ import {USER_CFG} from "./provider";
 
 @Directive({
     selector: '[promiseBtn]',
+    standalone: true,
 })
 
 export class PromiseBtnDirective implements OnDestroy, AfterContentInit {

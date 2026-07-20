@@ -19,6 +19,7 @@
     "enableResourceInlining": true,
     "enableIvy": true,
     "allowEmptyCodegenFiles": true,
+    "strictTemplates": false
   },
   "exclude": [
     "src/test.ts",

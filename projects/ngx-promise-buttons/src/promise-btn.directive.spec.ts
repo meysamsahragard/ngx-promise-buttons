@@ -1,12 +1,12 @@
 // import 'core-js/fn/object/entries';
-import {Component, DebugElement, ElementRef} from '@angular/core';
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {Component, DebugElement, ElementRef, ChangeDetectionStrategy, provideZoneChangeDetection} from '@angular/core';
+import {waitForAsync, ComponentFixture, TestBed} from '@angular/core/testing';
 import {PromiseBtnDirective} from './promise-btn.directive';
-import {userCfg} from './user-cfg';
+import {USER_CFG} from './provider';
 import {By} from '@angular/platform-browser';
 import {Observable} from 'rxjs';
 import {delay} from 'rxjs/operators';
-import * as BlueBird from 'bluebird';
+import BlueBird from 'bluebird';
 import * as jQuery from 'jquery';
 
 class MockElementRef extends ElementRef {
@@ -19,6 +19,7 @@ class MockElementRef extends ElementRef {
 @Component({
     selector: 'test-component',
     template: '',
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 class TestComponent {
@@ -31,21 +32,24 @@ class TestComponent {
 let testUserCfg: any;
 
 describe('PromiseBtnDirective', () => {
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     testUserCfg = {};
     TestBed.configureTestingModule({
       declarations: [
-        TestComponent,
+        TestComponent
+      ],
+      imports: [
         PromiseBtnDirective
       ],
       providers: [
+        provideZoneChangeDetection(),
         // more providers
         {
           provide: ElementRef,
           useClass: MockElementRef
         },
         {
-          provide: userCfg, useValue: testUserCfg
+          provide: USER_CFG, useValue: testUserCfg
         },
       ]
     });
@@ -84,7 +88,7 @@ describe('PromiseBtnDirective', () => {
         });
         describe('should accept all promise-alike values', () => {
           const possibleValues = {
-            'native Promise': () => new Promise((resolve) => {
+            'native Promise': () => new Promise<void>((resolve) => {
               resolve();
             }),
             'jQuery Deferred': () => jQuery.Deferred((defer: any) => {
@@ -93,7 +97,7 @@ describe('PromiseBtnDirective', () => {
             'jQuery Deferred Promise': () => jQuery.Deferred((defer: any) => {
               defer.resolve();
             }).promise(),
-            'bluebird Promise': () => new BlueBird((resolve) => {
+            'bluebird Promise': () => new BlueBird((resolve: (value?: unknown) => void) => {
               resolve();
             }),
             'RxJs Observable': () => {
@@ -198,12 +202,12 @@ describe('PromiseBtnDirective', () => {
         it('should init the loading state', () => {
           expect(promiseBtnDirective.initLoadingState).toHaveBeenCalled();
         });
-        it('should add .is-loading class', async(() => {
+        it('should add .is-loading class', waitForAsync(() => {
           fixture.whenStable().then(() => {
             expect(buttonElement.className).toBe('is-loading');
           });
         }));
-        it('should disable the button', async(() => {
+        it('should disable the button', waitForAsync(() => {
           fixture.whenStable().then(() => {
             expect(buttonElement.getAttribute('disabled')).toBe('disabled');
           });
@@ -221,12 +225,12 @@ describe('PromiseBtnDirective', () => {
         it('should init the loading state', () => {
           expect(promiseBtnDirective.initLoadingState).toHaveBeenCalled();
         });
-        it('should add .is-loading class', async(() => {
+        it('should add .is-loading class', waitForAsync(() => {
           fixture.whenStable().then(() => {
             expect(buttonElement.className).toBe('is-loading');
           });
         }));
-        it('should disable the button', async(() => {
+        it('should disable the button', waitForAsync(() => {
           fixture.whenStable().then(() => {
             expect(buttonElement.getAttribute('disabled')).toBe('disabled');
           });
@@ -236,7 +240,7 @@ describe('PromiseBtnDirective', () => {
       describe('once a passed promise is resolved', () => {
         let promise;
         let resolve: any;
-        beforeEach(async(() => {
+        beforeEach(waitForAsync(() => {
           promise = new Promise((res) => {
             resolve = res;
           });
@@ -268,7 +272,7 @@ describe('PromiseBtnDirective', () => {
       describe('once a passed promise is rejected', () => {
         let promise;
         let reject: any;
-        beforeEach(async(() => {
+        beforeEach(waitForAsync(() => {
           promise = new Promise((res, rej) => {
             reject = rej;
           });
@@ -421,13 +425,13 @@ describe('PromiseBtnDirective', () => {
       it('should init the loading state', () => {
         expect(promiseBtnDirective.initLoadingState).toHaveBeenCalled();
       });
-      it('should NOT disable the button', async(() => {
+      it('should NOT disable the button', waitForAsync(() => {
         expect(buttonElement.hasAttribute('disabled')).toBe(false);
       }));
     });
 
     describe('cfg:btnLoadingClass once a promise is passed', () => {
-      it('should add a custom loading class', async(() => {
+      it('should add a custom loading class', waitForAsync(() => {
         spyOn(promiseBtnDirective, 'addLoadingClass').and.callThrough();
         promiseBtnDirective.cfg.btnLoadingClass = 'TEST';
 
@@ -440,7 +444,7 @@ describe('PromiseBtnDirective', () => {
           expect(buttonElement.className).toBe('TEST');
         });
       }));
-      it('should not add a loading class if set to false', async(() => {
+      it('should not add a loading class if set to false', waitForAsync(() => {
         spyOn(promiseBtnDirective, 'addLoadingClass').and.callThrough();
 
         promiseBtnDirective.cfg.btnLoadingClass = false;
@@ -493,7 +497,7 @@ describe('PromiseBtnDirective', () => {
       fixture.detectChanges();
     });
 
-    it('should cancel the click handler when handleCurrentBtnOnly is false', async(() => {
+    it('should cancel the click handler when handleCurrentBtnOnly is false', waitForAsync(() => {
       promiseBtnDirective1.cfg.handleCurrentBtnOnly = false;
       buttonElement.click();
       fixture.detectChanges();
@@ -504,7 +508,7 @@ describe('PromiseBtnDirective', () => {
       });
     }));
 
-    it('should set loading state for first button when clicked, but not for second', async(() => {
+    it('should set loading state for first button when clicked, but not for second', waitForAsync(() => {
       buttonElement.click();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -513,7 +517,7 @@ describe('PromiseBtnDirective', () => {
       });
     }));
 
-    it('should set loading state for second button when clicked, but not for first', async(() => {
+    it('should set loading state for second button when clicked, but not for first', waitForAsync(() => {
       divElement.click();
       fixture.detectChanges();
       fixture.whenStable().then(() => {
@@ -522,7 +526,7 @@ describe('PromiseBtnDirective', () => {
       });
     }));
 
-    it('should set loading state when promise is set after click', async(() => {
+    it('should set loading state when promise is set after click', waitForAsync(() => {
       const setPromise = () => {
         fixture.componentInstance.testPromise = new Promise(() => {
         });

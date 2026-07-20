@@ -117,7 +117,7 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "builder": "@angular/build:ng-packagr",
           "options": {
             "tsConfig": "projects/ngx-promise-buttons/tsconfig.lib.json",
             "project": "projects/ngx-promise-buttons/ng-package.json"

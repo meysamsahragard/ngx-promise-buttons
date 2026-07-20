@@ -11,7 +11,7 @@
 </p>
 
 
-*ngx-promise-buttons* is a simple Angular library that lets you add a loading indicator to a button of your choice. It is built as a **standalone** directive and works with modern Angular (tested up to Angular 21). Check out the [demo](http://meysamsahragard.github.io/ngx-promise-buttons/#demo)!
+*ngx-promise-buttons* is a simple Angular library that lets you add a loading indicator to a button of your choice. It is built as a **standalone** directive and works with modern Angular (tested up to Angular 22). Check out the [demo](http://meysamsahragard.github.io/ngx-promise-buttons/#demo)!
 
 [Bug-reports or feature request](https://github.com/meysamsahragard/ngx-promise-buttons/issues) as well as any other kind of **feedback is highly welcome!**
 
@@ -21,7 +21,7 @@ This library is a maintained fork of [`angular2-promise-buttons`](https://github
 
 **Use `ngx-promise-buttons` when you need:**
 
-- Support for modern Angular (upgraded through Angular 21)
+- Support for modern Angular (upgraded through Angular 22)
 - A standalone API via `provideNgxPromiseButtons()` and `PromiseBtnDirective` (no NgModule required)
 - An actively maintained drop-in for the same promise/boolean/subscription button loading behavior
 
