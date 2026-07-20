@@ -15,7 +15,17 @@
 
 [Bug-reports or feature request](https://github.com/meysamsahragard/ngx-promise-buttons/issues) as well as any other kind of **feedback is highly welcome!**
 
-> **Note:** This package is the maintained successor of [`angular2-promise-buttons`](https://www.npmjs.com/package/angular2-promise-buttons), renamed and updated for standalone Angular apps.
+## Why this package instead of `angular2-promise-buttons`?
+
+This library is a maintained fork of [`angular2-promise-buttons`](https://github.com/johannesjo/angular2-promise-buttons). The original package stopped keeping pace with Angular’s platform changes, so apps on newer Angular versions hit friction: outdated peer/tooling support, NgModule-only setup (`forRoot`), and little ongoing maintenance for current releases.
+
+**Use `ngx-promise-buttons` when you need:**
+
+- Support for modern Angular (upgraded through Angular 21)
+- A standalone API via `provideNgxPromiseButtons()` and `PromiseBtnDirective` (no NgModule required)
+- An actively maintained drop-in for the same promise/boolean/subscription button loading behavior
+
+If you are still on a very old Angular / View Engine setup and already depend on `angular2-promise-buttons`, you can keep using that package. For Angular 13+ projects—especially standalone apps—prefer this one.
 
 ## Getting started
 Install it via npm:
