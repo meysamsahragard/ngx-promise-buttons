@@ -1,11 +1,33 @@
 {
   "name": "ngx-promise-buttons",
-  "version": "1.1.0",
+  "version": "1.1.1",
+  "private": true,
+  "description": "Add loading spinners to Angular buttons from promises, RxJS subscriptions, or booleans. Standalone directive for Angular 9-22.",
   "license": "MIT",
+  "homepage": "https://meysamsahragard.github.io/ngx-promise-buttons/",
+  "bugs": {
+    "url": "https://github.com/meysamsahragard/ngx-promise-buttons/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/meysamsahragard/ngx-promise-buttons.git"
+    "url": "https://github.com/meysamsahragard/ngx-promise-buttons.git"
   },
+  "keywords": [
+    "angular",
+    "ngx",
+    "angular-directive",
+    "standalone",
+    "button",
+    "loading",
+    "spinner",
+    "loading-button",
+    "promise",
+    "rxjs",
+    "subscription",
+    "async",
+    "typescript",
+    "promise-button"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -22,7 +44,7 @@
     "copy": "run-s copy.licence copy.readme",
     "copy.licence": "copyfiles ./LICENSE ./dist/ngx-promise-buttons",
     "copy.readme": "copyfiles ./README.md ./dist/ngx-promise-buttons",
-    "pub": "run-s lib && cd ./dist/ngx-promise-buttons/ && npm publish && cd .. && cd ..",
+    "pub": "run-s lib && npm publish ./dist/ngx-promise-buttons",
     "patch": "npm version patch && cd ./projects/ngx-promise-buttons && npm version patch && cd .. && cd .. && git add . && git commit -am\"chore: update lib version\"",
     "patch-release_": "run-s lib demo patch pub",
     "patch-release": "npm run patch-release_",

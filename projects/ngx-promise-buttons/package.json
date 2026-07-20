@@ -1,20 +1,32 @@
 {
   "name": "ngx-promise-buttons",
-  "version": "1.1.0",
-  "description": "Chilled loading buttons for angular",
-  "author": "meysamsahragard <contact@super-productivity.com> (http://super-productivity.com)",
+  "version": "1.1.1",
+  "description": "Add loading spinners to Angular buttons from promises, RxJS subscriptions, or booleans. Standalone directive for Angular 9-22.",
+  "author": "meysamsahragard <meysam.sahragard@gmail.com>",
   "license": "MIT",
+  "homepage": "https://meysamsahragard.github.io/ngx-promise-buttons/",
+  "bugs": {
+    "url": "https://github.com/meysamsahragard/ngx-promise-buttons/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/meysamsahragard/ngx-promise-buttons.git"
+    "url": "https://github.com/meysamsahragard/ngx-promise-buttons.git"
   },
   "keywords": [
     "angular",
-    "javascript",
-    "typescript",
+    "ngx",
+    "angular-directive",
+    "standalone",
     "button",
+    "loading",
+    "spinner",
+    "loading-button",
     "promise",
-    "spinner"
+    "rxjs",
+    "subscription",
+    "async",
+    "typescript",
+    "promise-button"
   ],
   "dependencies": {
     "tslib": "^2.0.0"
