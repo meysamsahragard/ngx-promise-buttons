@@ -18,7 +18,7 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": {
-              "base": "../../dist/demo"
+              "base": "dist/demo"
             },
             "index": "projects/ngx-promise-buttons-demo/src/index.html",
             "polyfills": [

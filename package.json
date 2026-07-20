@@ -1,6 +1,6 @@
 {
   "name": "ngx-promise-buttons",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -14,9 +14,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "demo": "run-s demo.build demo.copy-readme demo.gh-pages",
-    "demo.build": "ng build --aot --configuration production --base-href='./'",
+    "demo.build": "ng build ngx-promise-buttons-demo --configuration production --base-href=/ngx-promise-buttons/",
     "demo.copy-readme": "node scripts/copy-readme-to-demo.js",
-    "demo.gh-pages": "gh-pages -d dist/demo",
+    "demo.gh-pages": "gh-pages -d dist/demo/browser",
     "lib": "run-s lib.build copy",
     "lib.build": "ng build --configuration production ngx-promise-buttons",
     "copy": "run-s copy.licence copy.readme",
